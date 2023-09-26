@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION    = 0x00010005
+  BASE_NAME      = FrameBufferSerialPortLib
+  MODULE_TYPE    = BASE
+  VERSION_STRING = 1.0
+  LIBRARY_CLASS  = SerialPortLib
+
+[Sources.common]
+  FrameBufferSerialPortLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ArmPkg/ArmPkg.dec
+  MT6765Pkg/MT6765Pkg.dec
+
+[LibraryClasses]
+  ArmLib
+  PcdLib
+  IoLib
+  HobLib
+  CompilerIntrinsicsLib
+  CacheMaintenanceLib
+
+[Pcd]
+  gMT6765PkgTokenSpaceGuid.PcdMipiFrameBufferAddress
+  gMT6765PkgTokenSpaceGuid.PcdMipiFrameBufferWidth
+  gMT6765PkgTokenSpaceGuid.PcdMipiFrameBufferHeight
+  gMT6765PkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp
+  gMT6765PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth
+  gMT6765PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight
